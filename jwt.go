@@ -6,7 +6,10 @@ import (
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 )
+
+var jwtMiddleware = middleware.JWTWithConfig(middleware.JWTConfig{SigningKey: secret})
 
 func getToken(ctx echo.Context) error {
 	/* Create the token */

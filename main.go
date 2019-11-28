@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
 )
 
 var secret = []byte("secret")
@@ -13,7 +12,7 @@ func main() {
 	router.GET("/status", status)
 	router.GET("/get-token", getToken)
 
-	dataset := router.Group("/dataset", middleware.JWTWithConfig(middleware.JWTConfig{SigningKey: secret}), datasetLogger)
+	dataset := router.Group("/dataset", jwtMiddleware, datasetLogger)
 	dataset.GET("/employees", getEmployees)
 	dataset.GET("/clients", getClients)
 

@@ -1,0 +1,10 @@
+### Check JWT authentication (change the token from `/get-token`)
+GET /dataset/employees HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiZXhwIjoxNTc1MDI0OTY4LCJuYW1lIjoiQWRvIEt1a2ljIn0.RSpWEB6gkKAq81FZYXkkoko8hLTHnMwYRBg7g1SNhzI
+Host: localhost:3300
+Connection: close
+
+### Testing status
+GET /status HTTP/1.1
+Host: localhost:3300
+Connection: close
